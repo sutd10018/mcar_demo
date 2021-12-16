@@ -171,7 +171,17 @@
 		color:"#000000", shaded:false, fill:false, lineX:true, lineY:true, visible:graphWireVisible, width:2
     });
 	
-	
+	//store the z = f(x,y) value, to be passed on to students' site	
+	var storeFunction = 
+	{
+		message: function() { 
+			
+			
+			localStorage.setItem("functionText", functionText);
+			window.open("qrdisplay.html");
+			
+		}
+	};
 		
 	displayGraphFunc();
 			
@@ -222,14 +232,8 @@
 	zMinGUI.onChange( displayGraphFunc );
 	zMaxGUI.onChange( displayGraphFunc );
 	
-
-
-	
-
-	
 	gui.add(storeFunction, 'message').name("Push to AR");
-	
-	
+
 	
 	//store the z = f(x,y) value, to be passed on to students' site	
 	var storeFunction = 
