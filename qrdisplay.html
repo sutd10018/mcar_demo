@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<title>QR display</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+.bgColor {
+	height: 97vh;
+	background: rgb(22,73,125);
+	background: linear-gradient(90deg, rgba(22,73,125,1) 0%, rgba(11,11,38,1) 50%, rgba(22,73,125,1) 100%);
+	align: center;
+}
+</style>
+<body>
+
+<div class="bgColor w3-display-container w3-text-white">
+  <div class="w3-display-middle">
+	<h1 class="w3-xxlarge w3-center">z = f(x,y) =</h1>
+	<h1 id="equation" class="w3-xxlarge w3-center">a*x^2 + b*y^2</h1>
+    <h2 class="w3-xlarge w3-center">View in AR mode by scanning this QR code</h2>
+    <hr class="w3-border-grey" style="margin:auto;width:40%">
+	<p class="w3-center">
+		<img src="images/frame.png" class="w3-border" alt="qr" style="padding:4px;width:50%">
+	</p>
+  </div>
+  
+  <!-- footer -->
+  <div class="w3-display-bottomleft w3-padding-large">
+    Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>
+  </div>
+
+  <!-- end of footer -->
+  
+</div>
+
+
+<script>
+var getText = "";
+
+function changeEquation() {
+	getText = localStorage.getItem("functionText");
+	document.getElementById("equation").innerHTML = getText;
+}
+
+changeEquation();
+
+</script>
+
+
+</body>
+</html>
